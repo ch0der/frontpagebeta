@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'library.dart';
 
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
@@ -34,8 +33,13 @@ class _MainPageState extends State<MainPage> {
 
   final List<Widget> _children = [
     const PageOne(),
-    const PageTwo(),
-    PageThree(colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.green,accentColor: Colors.lime.shade400,brightness: Brightness.dark),),
+    const ShopPage(),
+    PageThree(
+      colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.green,
+          accentColor: Colors.lime.shade400,
+          brightness: Brightness.dark),
+    ),
     const PageFour(),
     const PageFive(),
   ];
@@ -60,10 +64,14 @@ class _MainPageState extends State<MainPage> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.trending_up), label: 'Trending'),
-          BottomNavigationBarItem(icon: Icon(Icons.music_note), label: 'Music',),
+              icon: Icon(Icons.shopping_cart_sharp), label: 'Shop'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.music_note),
+            label: 'Music',
+          ),
           BottomNavigationBarItem(icon: Icon(Icons.videocam), label: 'Videos'),
-          BottomNavigationBarItem(icon: Icon(Icons.stars), label: 'More'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.trending_up), label: 'Trending'),
         ],
       ),
     );
@@ -76,15 +84,6 @@ class PageOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(child: Text('Home Page'));
-  }
-}
-
-class PageTwo extends StatelessWidget {
-  const PageTwo({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(child: Text('Trending Page'));
   }
 }
 
