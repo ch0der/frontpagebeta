@@ -40,7 +40,7 @@ class _MainPageState extends State<MainPage> {
           accentColor: Colors.lime.shade400,
           brightness: Brightness.dark),
     ),
-    const PageFour(),
+    PageFour(),
     const PageFive(),
   ];
 
@@ -87,15 +87,6 @@ class PageOne extends StatelessWidget {
   }
 }
 
-
-class PageFour extends StatelessWidget {
-  const PageFour({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(child: Text('Videos Page'));
-  }
-}
 
 class PageFive extends StatelessWidget {
   const PageFive({super.key});
